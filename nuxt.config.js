@@ -18,6 +18,14 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://devshub-analytics.herokuapp.com/umami.js',
+        'data-website-id': '440dc3db-6525-40a2-8823-d2d735488531',
+        async: true,
+        defer: true,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
