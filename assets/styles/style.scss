@@ -19,6 +19,8 @@ $text: #ffffff;
 
 // Card Customization
 $card-background-color: #003543;
+$card-header-background-color: $body-background-color;
+$card-header-color: #ffffff;
 
 // Footer Customization
 $footer-background-color: $primary;
@@ -31,6 +33,7 @@ $menu-item-hover-background-color: $primary;
 $menu-item-active-background-color: $primary;
 $menu-list-link-padding: 0.8em 4em;
 $menu-item-radius: 8px;
+$sidebar-width: 320px;
 
 @import '../../node_modules/bulma/bulma.sass';
 @import '../../node_modules/buefy/src/scss/buefy.scss';

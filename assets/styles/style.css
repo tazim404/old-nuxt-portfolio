@@ -4967,7 +4967,7 @@ fieldset[disabled] .select select:hover {
 }
 
 .card-header {
-  background-color: transparent;
+  background-color: #001e26;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -4982,7 +4982,7 @@ fieldset[disabled] .select select:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #363636;
+  color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16271,7 +16271,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: whitesmoke;
   -webkit-box-shadow: 5px 0px 13px 3px rgba(10, 10, 10, 0.1);
           box-shadow: 5px 0px 13px 3px rgba(10, 10, 10, 0.1);
-  width: 260px;
+  width: 320px;
   z-index: 39;
 }
 
@@ -16307,7 +16307,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 .b-sidebar .sidebar-content.is-mini.is-mini-expand:hover:not(.is-mini-delayed):not(.is-fullwidth) {
-  width: 260px;
+  width: 320px;
 }
 
 .b-sidebar .sidebar-content.is-mini.is-mini-expand:hover:not(.is-mini-delayed):not(.is-fullwidth).is-mini-expand-fixed {
@@ -16349,7 +16349,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     width: 80px;
   }
   .b-sidebar .sidebar-content.is-mini-mobile.is-mini-expand:hover:not(.is-fullwidth-mobile) {
-    width: 260px;
+    width: 320px;
   }
   .b-sidebar .sidebar-content.is-mini-mobile.is-mini-expand:hover:not(.is-fullwidth-mobile).is-mini-expand-fixed {
     position: fixed;

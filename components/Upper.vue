@@ -2,8 +2,8 @@
   <div class="columns is-multiline">
     <div class="column">
       <figure>
-        <!-- <img src="@/assets/images/tazim.png" alt="" class="image" /> -->
-        <nuxt-img src="/tazim-rahbar.png" class="image" />
+        <img src="@/assets/images/tazim.png" alt="" class="image" />
+        <!-- <nuxt-img src="/tazim-rahbar.png" class="image" /> -->
       </figure>
     </div>
     <div class="column">

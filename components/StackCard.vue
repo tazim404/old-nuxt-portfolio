@@ -6,7 +6,7 @@
       <div class="content">
         <div class="columns is-multiline is-mobile">
           <div
-            class="column is-one-quarter"
+            class="column is-one-quarter is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
             v-for="stack in stacks"
             :key="stack.id"
           >

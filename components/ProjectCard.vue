@@ -10,11 +10,8 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-64x64">
-                <!-- <img
-              src="https://bulma.io/images/placeholders/96x96.png"
-              alt="Placeholder image"
-            /> -->
-                <nuxt-img :src="project.logoFileName" class="project-logo" />
+                <img :src="project.logo" alt="Placeholder image" />
+                <!-- <nuxt-img :src="project.logoFileName" class="project-logo" /> -->
               </figure>
             </div>
             <div class="media-content">
@@ -78,6 +75,7 @@ export default {
         videoLink: '',
         repoLink: '',
         websiteLink: 'https://devshub.netlify.app',
+        logo: require('../assets/images/devshub.png'),
       },
       {
         id: 1,
@@ -97,6 +95,7 @@ export default {
         videoLink: 'https://www.youtube.com/watch?v=bCtpTogUu64&t=21s',
         repoLink: 'https://github.com/tazim404/collab',
         websiteLink: '',
+        logo: require('../assets/images/collab.png'),
       },
     ],
   }),
@@ -111,5 +110,6 @@ export default {
 }
 .h-20 {
   height: 6rem;
+  max-height: 6rem;
 }
 </style>

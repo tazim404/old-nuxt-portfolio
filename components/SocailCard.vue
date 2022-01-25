@@ -6,13 +6,13 @@
       <div class="content">
         <div class="columns is-multiline is-mobile">
           <div
-            class="column is-one-quarter"
+            class="column is-one-quarter is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
             v-for="social in socials"
             :key="social.id"
           >
             <figure class="image is-32x32 has-ratio">
               <a :href="social.url" target="_blank">
-                <img :src="social.logo" :alt="social.name" />
+                <img :src="social.logo" :alt="social.name" class="" />
               </a>
             </figure>
             <h6 class="title is-6 has-text-centered">
