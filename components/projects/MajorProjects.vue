@@ -1,5 +1,8 @@
 <template>
-  <section>
+  <div>
+    <h2 class="title is-4">Major Projects 👍</h2>
+    <hr />
+
     <div class="columns is-multiline">
       <div
         class="column is-one-third"
@@ -12,7 +15,6 @@
               <div class="media-left">
                 <figure class="image is-64x64">
                   <img :src="project.logo" alt="Placeholder image" />
-                  <!-- <nuxt-img :src="project.logoFileName" class="project-logo" /> -->
                 </figure>
               </div>
               <div class="media-content">
@@ -27,7 +29,6 @@
             </div>
             <div class="field is-grouped">
               <p class="control">
-                <!-- <button class="button is-primary">Vist</button> -->
                 <a
                   :href="project.websiteLink"
                   class="button is-primary is-outlined"
@@ -36,7 +37,6 @@
                 >
                   Visit
                 </a>
-                <!-- <button class="button is-primary">Github</button> -->
                 <a
                   :href="project.repoLink"
                   class="button is-primary is-outlined"
@@ -59,32 +59,19 @@
         </div>
       </div>
     </div>
-    <div class="columns">
-      <div class="column is-2"></div>
-      <div class="column is-8">
-        <nuxt-link
-          to="/projects"
-          tag="button"
-          class="button is-primary is-fullwidth is-outlined"
-        >
-          Archieved Projects
-        </nuxt-link>
-      </div>
-      <div class="column is-2"></div>
-    </div>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'ProjectCard',
+  name: 'MajorProjects',
   data: () => ({
     projects: [
       {
-        id: 2,
+        id: 1,
         name: 'Devshub',
         description:
-          'A social network for developers where you can share your projects and tools you built. Working on lots of features.',
+          'A social media for developers and programmers to share thier projects and tools they built.',
         logoFileName: '/devshub.png',
         techUsed: ['Fastapi', 'Bulma', 'Buefy', 'Vue', 'Postgresql'],
         videoLink: '',
@@ -93,10 +80,10 @@ export default {
         logo: require('@/assets/images/devshub.png'),
       },
       {
-        id: 1,
+        id: 2,
         name: 'Collab Play',
         description:
-          'A web app in which you can watch youtube videos collaboratively with your friend and at the same time you can chat with them. It is best suitable and suggested for two people.',
+          'A web app to watch youtube video and chat in real time with your frindes collaboratively.',
         logoFileName: '/collab.png',
         techUsed: [
           'Flask',
@@ -123,8 +110,10 @@ export default {
   background-color: rgba(37, 84, 97, 0.8);
   border-radius: 5px;
 }
-.h-20 {
-  height: 6rem;
-  max-height: 6rem;
+.title {
+  font-family: 'DM Sans', sans-serif;
+}
+hr {
+  margin-top: 0px;
 }
 </style>

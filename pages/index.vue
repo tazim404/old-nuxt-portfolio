@@ -32,6 +32,9 @@ export default {
     SocialCard,
     ProjectCard,
   },
+  head: {
+    title: 'Tazim Rahbar',
+  },
 }
 </script>
 <style scoped>

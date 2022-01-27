@@ -7,6 +7,7 @@ $body-background-color: #001e26;
 
 // Pallet Colors
 $primary: #00dc82;
+$link: #00484c;
 
 // Navbar Customization
 $navbar-padding-horizontal: 4rem;
@@ -34,6 +35,10 @@ $menu-item-active-background-color: $primary;
 $menu-list-link-padding: 0.8em 4em;
 $menu-item-radius: 8px;
 $sidebar-width: 320px;
+
+// Form Customization
+$input-background-color: #164653;
+$input-color: #a1a1aa;
 
 @import '../../node_modules/bulma/bulma.sass';
 @import '../../node_modules/buefy/src/scss/buefy.scss';

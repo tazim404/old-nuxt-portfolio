@@ -16,6 +16,46 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Tazim Rahbar',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Portfolio of Tazim Rahbar',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://i.ibb.co/8mvrYSb/project-pixle.png',
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'Portfolio of Tazim Rahbar',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Tazim Rahbar',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Portfolio of Tazim Rahbar',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://i.ibb.co/8mvrYSb/project-pixle.png',
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'Portfolio of Tazim Rahbar',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
