@@ -3,11 +3,13 @@
     <div class="container section mt-5">
       <!-- <mark>These are dummy data right now.</mark> -->
       <h4 class="title is-4">Articles 📝</h4>
+      <hr />
 
-      <ArticleTags :tags="tags" />
-      <SearchArticle />
+      <!-- <ArticleTags :tags="tags" /> -->
+      <!-- <SearchArticle /> -->
       <br />
-      <ArticleCard :articles="articles" />
+      <!-- <ArticleCard :articles="articles" /> -->
+      <ArticlePlaecholder />
     </div>
   </div>
 </template>
@@ -16,39 +18,42 @@
 import SearchArticle from '@/components/blog/SearchArticle.vue'
 import ArticleCard from '@/components/blog/ArticleCard.vue'
 import ArticleTags from '@/components/blog/ArticleTags.vue'
+import ArticlePlaecholder from '@/components/blog/ArticlePlaecholder.vue'
 export default {
   name: 'ArticlePage',
   components: {
     SearchArticle,
     ArticleCard,
     ArticleTags,
+    ArticlePlaecholder,
   },
+
   data: () => ({
-    articles: [
-      {
-        id: 1,
-        title: 'How to upload image using nuxt js',
-        date: 'January 1 2022',
-        coverPhoto:
-          'https://i.picsum.photos/id/845/536/354.jpg?hmac=N0jid6KpFZyaCJhFdFJVRQUImWIJuxYl53n3GkFj9Ps',
-      },
-      {
-        id: 2,
-        title: 'How I have create this portfolio',
-        date: 'January 1 2022',
-        coverPhoto:
-          'https://i.picsum.photos/id/845/536/354.jpg?hmac=N0jid6KpFZyaCJhFdFJVRQUImWIJuxYl53n3GkFj9Ps',
-      },
-      {
-        id: 2,
-        title: 'Hello world',
-        date: 'January 1 2022',
-        coverPhoto:
-          'https://i.picsum.photos/id/845/536/354.jpg?hmac=N0jid6KpFZyaCJhFdFJVRQUImWIJuxYl53n3GkFj9Ps',
-      },
-    ],
-    tags: ['Tag1', 'Tag2', 'Tag3', 'Tag4', 'Tag5'],
+    articles: [],
+    tags: ['Tag1'],
   }),
+  // async asyncData({ $axios }) {
+  //   const respone = await $axios
+  //     .get('https://tazimblog.herokuapp.com/blogs')
+  //     .then((res) => {
+  //       console.log(res.data)
+  //       console.log
+  //     })
+  // },
+  async fetch() {
+    // this.articles = await this.$axios
+    //   .get('https://tazimblog.herokuapp.com/blogs')
+    //   .then((res) => {
+    //     // console.log(res.data.data)
+    //     // this.articles = res.data.data
+    //     res.data.data
+    //   })
+    await this.$axios
+      .get('https://tazimblog.herokuapp.com/blogs')
+      .then((res) => {
+        this.articles = res.data.data
+      })
+  },
 }
 </script>
 <style scoped>

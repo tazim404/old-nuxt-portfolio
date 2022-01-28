@@ -1,9 +1,10 @@
 <template>
-  <div class="columns">
+  <div class="columns is-multiline">
     <div
       class="column is-one-third"
       v-for="article in articles"
       :key="article.id"
+      @click="$router.push(`/articles/${article.id}`)"
     >
       <div class="card-wrap">
         <div class="card">
@@ -12,7 +13,9 @@
               <h5 class="subtitle is-5">
                 {{ article.title }}
               </h5>
-              <time datetime="2016-1-1">{{ article.date }}</time>
+              <time datetime="2016-1-1">{{
+                new Date(article.created).toDateString()
+              }}</time>
             </div>
           </div>
         </div>
@@ -44,5 +47,8 @@ export default {
   background-color: #001e26;
   border-radius: 5px;
   height: 100%;
+}
+.card:hover {
+  cursor: pointer;
 }
 </style>
