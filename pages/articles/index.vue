@@ -19,6 +19,7 @@ import SearchArticle from '@/components/blog/SearchArticle.vue'
 import ArticleCard from '@/components/blog/ArticleCard.vue'
 import ArticleTags from '@/components/blog/ArticleTags.vue'
 import ArticlePlaecholder from '@/components/blog/ArticlePlaecholder.vue'
+import { NotionRenderer, getPageBlocks } from 'vue-notion'
 export default {
   name: 'ArticlePage',
   components: {
@@ -26,20 +27,18 @@ export default {
     ArticleCard,
     ArticleTags,
     ArticlePlaecholder,
+    NotionRenderer,
   },
 
   data: () => ({
     articles: [],
     tags: ['Tag1'],
+    blogs: null,
   }),
-  // async asyncData({ $axios }) {
-  //   const respone = await $axios
-  //     .get('https://tazimblog.herokuapp.com/blogs')
-  //     .then((res) => {
-  //       console.log(res.data)
-  //       console.log
-  //     })
-  // },
+  async asyncData({ $notion }) {
+    const blogs = await $notion.getPageBlocks()
+    return { blogs }
+  },
   async fetch() {
     // this.articles = await this.$axios
     //   .get('https://tazimblog.herokuapp.com/blogs')
