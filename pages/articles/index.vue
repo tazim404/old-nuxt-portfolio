@@ -1,15 +1,16 @@
 <template>
-  <div>
-    <div class="container section mt-5">
-      <!-- <mark>These are dummy data right now.</mark> -->
-      <h4 class="title is-4">Articles 📝</h4>
-      <hr />
+  <div class="hero is-fullheight">
+    <div>
+      <div class="container section mt-5">
+        <h4 class="title is-4">Articles 📝</h4>
+        <hr />
+        <!-- <ArticleTags :tags="getTags()" /> -->
+        <!-- <SearchArticle /> -->
 
-      <!-- <ArticleTags :tags="tags" /> -->
-      <!-- <SearchArticle /> -->
-      <br />
-      <!-- <ArticleCard :articles="articles" /> -->
-      <ArticlePlaecholder />
+        <br />
+        <!-- <ArticlePlaecholder v-if="articles.length == 0" /> -->
+        <ArticleCard :articles="articles" />
+      </div>
     </div>
   </div>
 </template>
@@ -19,7 +20,7 @@ import SearchArticle from '@/components/blog/SearchArticle.vue'
 import ArticleCard from '@/components/blog/ArticleCard.vue'
 import ArticleTags from '@/components/blog/ArticleTags.vue'
 import ArticlePlaecholder from '@/components/blog/ArticlePlaecholder.vue'
-import { NotionRenderer, getPageBlocks } from 'vue-notion'
+// import { NotionRenderer, getPageBlocks, getPageTable } from 'vue-notion'
 export default {
   name: 'ArticlePage',
   components: {
@@ -27,31 +28,19 @@ export default {
     ArticleCard,
     ArticleTags,
     ArticlePlaecholder,
-    NotionRenderer,
   },
 
   data: () => ({
-    articles: [],
-    tags: ['Tag1'],
-    blogs: null,
+    articles: null,
+    tags: [],
+    blockMap: null,
   }),
-  async asyncData({ $notion }) {
-    const blogs = await $notion.getPageBlocks()
-    return { blogs }
-  },
-  async fetch() {
-    // this.articles = await this.$axios
-    //   .get('https://tazimblog.herokuapp.com/blogs')
-    //   .then((res) => {
-    //     // console.log(res.data.data)
-    //     // this.articles = res.data.data
-    //     res.data.data
-    //   })
-    await this.$axios
-      .get('https://tazimblog.herokuapp.com/blogs')
-      .then((res) => {
-        this.articles = res.data.data
-      })
+  async asyncData({ $notion, route }) {
+    console.log(route.name)
+    const articles = await $notion.getPageTable(
+      '8cf90db2d8b245ad8625787be76d63b9'
+    )
+    return { articles }
   },
 }
 </script>

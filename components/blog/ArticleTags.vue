@@ -1,5 +1,6 @@
 <template>
   <div class="tags">
+    <div class="tag is-medium is-link">All</div>
     <div
       class="tag is-medium is-link"
       v-for="(tag, index) in tags"
@@ -16,7 +17,7 @@ export default {
 
   props: {
     tags: {
-      type: Array,
+      type: Set,
     },
   },
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-6">
     <!-- <div class="hero is-fullheight">
     <div class="section mt-5">
       <div class="">
@@ -15,11 +15,15 @@
     </div>
   </div> -->
     <!-- {{ blockMap }} -->
-    <NotionRenderer :blockMap="blockMap" fullPage />
+    <!-- {{ blockMap }} -->
+    <NotionRenderer :blockMap="blockMap" fullPage prism />
   </div>
 </template>
 
 <script>
+import 'prismjs'
+import 'prismjs/components/prism-python'
+// 5008cda5-b3d0-4554-b364-3434e972c85b
 // https://tropical-prepared-68a.notion.site/I-am-starting-a-startup-53a9a65bb73c4ac8ae1e51e6eb482f1b
 // https://tropical-prepared-68a.notion.site/Devshub-bf43738f07054b719d6412bc1d36e169
 import BlogCover from '../../components/single/BlogCover.vue'
@@ -38,24 +42,23 @@ export default {
     NotionRenderer,
   },
   data: () => ({ blockMap: null }),
-  // async created() {
-  //   this.blockMap = await getPageBlocks('53a9a65bb73c4ac8ae1e51e6eb482f1b')
-  // },
-  async asyncData({ $notion }) {
+  async asyncData({ $notion, route }) {
     // use Notion module to get Notion blocks from the API via a Notion pageId
-    const blockMap = await $notion.getPageBlocks(
-      '53a9a65bb73c4ac8ae1e51e6eb482f1b'
-    )
+    const blockMap = await $notion.getPageBlocks(route.params.slug)
     return { blockMap }
   },
 }
 </script>
 <style>
 @import 'vue-notion/src/styles.css';
+@import 'prismjs/themes/prism.css';
 .notion-title {
   color: #ffffff;
 }
 .notion-text {
+  color: #ffffff;
+}
+.notion {
   color: #ffffff;
 }
 </style>

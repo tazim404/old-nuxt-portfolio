@@ -4,18 +4,16 @@
       class="column is-one-third"
       v-for="article in articles"
       :key="article.id"
-      @click="$router.push(`/articles/${article.id}`)"
+      @click="$router.push(`/articles/${article.page[0]}`)"
     >
       <div class="card-wrap">
         <div class="card">
           <div class="card-content">
             <div class="content">
               <h5 class="subtitle is-5">
-                {{ article.title }}
+                {{ article.Title }}
               </h5>
-              <time datetime="2016-1-1">{{
-                new Date(article.created).toDateString()
-              }}</time>
+              <time datetime="2016-1-1">{{ article.date }}</time>
             </div>
           </div>
         </div>
@@ -25,6 +23,7 @@
 </template>
 
 <script>
+// new Date(article.created).toDateString()
 export default {
   name: 'ArticleCard',
   props: {
