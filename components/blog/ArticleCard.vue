@@ -23,6 +23,7 @@
 </template>
 
 <script>
+// https://www.notion.so/How-to-build-good-habits-76686eadbe0d4429b2751a58955f2cc5
 // new Date(article.created).toDateString()
 export default {
   name: 'ArticleCard',

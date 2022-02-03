@@ -22,6 +22,16 @@ import ArticleTags from '@/components/blog/ArticleTags.vue'
 import ArticlePlaecholder from '@/components/blog/ArticlePlaecholder.vue'
 // import { NotionRenderer, getPageBlocks, getPageTable } from 'vue-notion'
 export default {
+  head: {
+    title: 'Articles.',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Articles by tazim rahbar',
+      },
+    ],
+  },
   name: 'ArticlePage',
   components: {
     SearchArticle,
